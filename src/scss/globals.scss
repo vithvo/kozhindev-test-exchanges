@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: white;
+  cursor: default;
+  height: 100vh;
+  a {
+    text-decoration: none;
+  }
+  background-color: #402677;
+}
+
+.siteContainer {
+  padding: 0 100px;
+}
