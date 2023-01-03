@@ -11,11 +11,7 @@ export const pairsSlice = createSlice({
   name: "pairs",
   initialState,
 
-  reducers: {
-    setItems(state, action: PayloadAction<Pair[]>) {
-      state.items = action.payload;
-    },
-  },
+  reducers: {},
 
   extraReducers: (builder) => {
     builder.addCase(fetchPairs.pending, (state) => {

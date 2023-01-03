@@ -11,11 +11,11 @@
   &:focus-visible {
     background-color: #fff;
     outline: none;
-    &__option {
-      width: 200px !important;
-      height: 30px !important;
-      // border-radius: 5px;
-      padding: 10px !important;
-    }
+  }
+  @media (max-width: 570px) {
+    width: 320px;
+  }
+  @media (max-width: 420px) {
+    width: 250px !important;
   }
 }

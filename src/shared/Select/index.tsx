@@ -9,9 +9,17 @@ interface SelectProps {
   id: number;
   setFirstValue?: Dispatch<SetStateAction<string>>;
   setSecondValue?: Dispatch<SetStateAction<string>>;
+  firstSelectValue?: string;
+  secondSelectValue?: string;
 }
 
-export const Select: FC<SelectProps> = ({ id, setFirstValue, setSecondValue }) => {
+export const Select: FC<SelectProps> = ({
+  id,
+  setFirstValue,
+  setSecondValue,
+  firstSelectValue,
+  secondSelectValue,
+}) => {
   const onClickOption = (e: React.ChangeEvent<HTMLSelectElement>) => {
     id === 1 && setFirstValue(e.target.value);
     id === 2 && setSecondValue(e.target.value);
@@ -22,7 +30,7 @@ export const Select: FC<SelectProps> = ({ id, setFirstValue, setSecondValue }) =
       name="baseCurrency"
       className="select"
       onChange={(e) => onClickOption(e)}
-      defaultValue={id === 2 && "USD"}
+      value={id === 1 ? firstSelectValue : secondSelectValue}
     >
       {baseCurrency.map((base, index) => (
         <option key={index} value={base.base} className="select__option">

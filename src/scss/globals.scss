@@ -15,4 +15,13 @@ body {
 
 .siteContainer {
   padding: 0 100px;
+  @media (max-width: 1024px) {
+    padding: 0 50px;
+  }
+  @media (max-width: 768px) {
+    padding: 0 20px;
+  }
+  @media (max-width: 420px) {
+    padding: 0 10px;
+  }
 }

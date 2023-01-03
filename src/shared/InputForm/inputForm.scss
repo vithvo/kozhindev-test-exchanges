@@ -1,15 +1,16 @@
 .inputForm {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
   &__input {
-		margin-bottom: 10px;
+    box-sizing: border-box;
+    padding: 0 10px;
+    margin-bottom: 10px;
     width: 200px;
     height: 30px;
     border-radius: 5px;
     border: 0;
     font-size: 14px;
     font-family: "Montserrat", sans-serif;
-    padding: 0 10px;
     background-color: #e0d4f8;
     transition: all 0.15s ease-in-out;
     letter-spacing: 0.02em !important;
@@ -17,5 +18,17 @@
       background-color: #fff;
       outline: none;
     }
+    @media (max-width: 570px) {
+      width: 320px !important;
+    }
+    @media (max-width: 420px) {
+      width: 250px !important;
+    }
+  }
+  @media (max-width: 570px) {
+    width: 320px !important;
+  }
+  @media (max-width: 420px) {
+    width: 250px !important;
   }
 }
