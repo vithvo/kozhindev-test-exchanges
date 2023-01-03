@@ -22,7 +22,7 @@ const Header: FC = () => {
 
   useEffect(() => {
     !date && setDate(new Date());
-  });
+  }, [date]);
 
   return (
     <header>

@@ -34,6 +34,4 @@ export const pairsSlice = createSlice({
   },
 });
 
-export const {} = pairsSlice.actions;
-
 export default pairsSlice.reducer;

@@ -20,8 +20,7 @@ export const Table: FC = () => {
 
   useEffect(() => {
     items.length === 0 && getPairs();
-  }, []);
-
+  }, [items.length]);
 
   return (
     <table ref={tableRef} className={`table ${isLoading && "borderNone"}`} border={1}>

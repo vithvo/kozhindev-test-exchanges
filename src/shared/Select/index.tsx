@@ -2,7 +2,6 @@ import React from "react";
 import { FC } from "react";
 import "./Select.scss";
 import { baseCurrency } from "../../routes/MainPage/views/Table/constants";
-import { useState } from "react";
 import { Dispatch } from "react";
 import { SetStateAction } from "react";
 
