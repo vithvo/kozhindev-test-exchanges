@@ -14,7 +14,7 @@ interface InputProps {
   secondSelectValue: string;
 }
 
-export const InputForm: FC<InputProps> = ({ firstSelectValue, secondSelectValue }) => {
+export const InputForm: FC<InputProps> = ({ secondSelectValue, firstSelectValue }) => {
   const { items } = useSelector(selectPairsData);
   const [firstInputValue, setFirstInputValue] = useState<string>("0");
   const [secondInputValue, setSecondInputValue] = useState<string>("0");
@@ -24,9 +24,7 @@ export const InputForm: FC<InputProps> = ({ firstSelectValue, secondSelectValue 
     allCurrancyPairs.push(...item.rates);
   });
 
-
   // Запись полей в localstorage
-	
 
   useMemo(() => {
     (firstInputValue !== "0" || secondInputValue !== "0") &&
@@ -146,16 +144,16 @@ export const InputForm: FC<InputProps> = ({ firstSelectValue, secondSelectValue 
   return (
     <label htmlFor="input" className="inputForm">
       <input
-        value={firstInputValue}
-        type="text"
-        className="inputForm__input"
-        onChange={(e) => onChangeFirstInputValue(e)}
-      />
-      <input
         value={secondInputValue}
         type="text"
         className="inputForm__input"
         onChange={(e) => onChangeSecondInputValue(e)}
+      />
+      <input
+        value={firstInputValue}
+        type="text"
+        className="inputForm__input"
+        onChange={(e) => onChangeFirstInputValue(e)}
       />
     </label>
   );

@@ -25,7 +25,7 @@ const Header: FC = memo(() => {
 
   useEffect(() => {
     items.length !== 0 && setDate(new Date());
-  }, []);
+  }, [items.length]);
 
   return (
     <header>
