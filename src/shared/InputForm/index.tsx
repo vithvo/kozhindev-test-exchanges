@@ -18,10 +18,10 @@ export const InputForm: FC<InputProps> = ({ firstSelectValue, secondSelectValue 
   const { items } = useSelector(selectPairsData);
   const [firstInputValue, setFirstInputValue] = useState<string>("0");
   const [secondInputValue, setSecondInputValue] = useState<string>("0");
-  const allCurranctPairs = [];
+  const allCurrancyPairs = [];
 
   items.map((item) => {
-    allCurranctPairs.push(...item.rates);
+    allCurrancyPairs.push(...item.rates);
   });
 
 
@@ -41,16 +41,16 @@ export const InputForm: FC<InputProps> = ({ firstSelectValue, secondSelectValue 
   // Расчет курса выбранных пар
 
   const firstValue =
-    allCurranctPairs.length > 0 &&
+    allCurrancyPairs.length > 0 &&
     (Object.values(
-      allCurranctPairs?.find(
+      allCurrancyPairs?.find(
         (item) => Object.keys(item)[0] === `${secondSelectValue}${firstSelectValue}`
       )
     )[0] as string);
 
   const secondValue = Object.values(
-    allCurranctPairs?.length > 0 &&
-      allCurranctPairs.find(
+    allCurrancyPairs?.length > 0 &&
+      allCurrancyPairs.find(
         (item) => Object.keys(item)[0] === `${firstSelectValue}${secondSelectValue}`
       )
   )[0] as string;

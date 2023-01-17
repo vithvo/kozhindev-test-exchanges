@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, memo } from "react";
 import "./header.scss";
 import { Link } from "react-router-dom";
 import { formatDate } from "./service";
@@ -6,13 +6,16 @@ import { fetchPairs } from "../../redux/currencyPairs/asyncAction";
 import { useAppDispatch } from "../../redux/store";
 import { useState } from "react";
 import { useEffect } from "react";
+import { selectPairsData } from "../../redux/currencyPairs/selector";
+import { useSelector } from "react-redux";
 
-const Header: FC = () => {
+const Header: FC = memo(() => {
   const dispatch = useAppDispatch();
-  const [date, setDate] = useState<Date>();
+  const [date, setDate] = useState<Date | null>();
+  const { items } = useSelector(selectPairsData);
 
   const onClickButton = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    e.preventDefault();
+    e.stopPropagation();
     const getPairs = async () => {
       dispatch(fetchPairs());
     };
@@ -21,8 +24,8 @@ const Header: FC = () => {
   };
 
   useEffect(() => {
-    !date && setDate(new Date());
-  }, [date]);
+    items.length !== 0 && setDate(new Date());
+  }, []);
 
   return (
     <header>
@@ -42,6 +45,6 @@ const Header: FC = () => {
       </div>
     </header>
   );
-};
+});
 
 export default Header;

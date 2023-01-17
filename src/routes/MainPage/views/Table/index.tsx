@@ -20,9 +20,11 @@ export const Table: FC = () => {
     dispatch(fetchPairs());
   };
 
+
+
   useEffect(() => {
     items.length === 0 && getPairs();
-  }, [items.length]);
+  }, []);
 
   const onClickButtonView = () => {
     setAllViewTable(!allWiewTable);
